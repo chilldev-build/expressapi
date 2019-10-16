@@ -14,11 +14,18 @@ router.get('/', (req, res) => {
     let json = {
         data
     }
-    res.status(200)
-    .send(json)
-    .end();
     
-
+    res.status(200)
+    .render('template', {
+        locals: {
+            title: "A list of trails",
+            arrayOfData: data.localTrails
+        },
+        partials: {
+            partial: "partial-all"
+        }
+    })
+    //.end();
 });
 
 module.exports = router;
