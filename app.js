@@ -4,7 +4,8 @@ const express = require('express'),
     helmet = require('helmet'),
     app = express();
 
-app.listen('3333', function() {
+    //binding the port for WSL 2
+app.listen('3333',"127.0.0.1", function() {
     console.log('Listening on port 3333');
 });
 
